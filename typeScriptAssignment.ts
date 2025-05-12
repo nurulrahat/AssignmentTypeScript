@@ -27,6 +27,36 @@ function concatenateArrays<T>(...arrays: T[][]): T[] {
 // concatenateArrays(["a", "b"], ["c"]);       // Output: ["a", "b", "c"]
 // concatenateArrays([1, 2], [3, 4], [5]);     // Output: [1, 2, 3, 4, 5]
 
+class Vehicle {
+  private make: string;
+  private year: number;
+
+  constructor(make: string, year: number) {
+    this.make = make;
+    this.year = year;
+  }
+
+  public getInfo(): string {
+    return `Make: ${this.make}, Year: ${this.year}`;
+  }
+}
+
+class Car extends Vehicle {
+  private model: string;
+
+  constructor(make: string, year: number, model: string) {
+    super(make, year); // Call the base class constructor
+    this.model = model;
+  }
+
+  public getModel(): string {
+    return `Model: ${this.model}`;
+  }
+}
+
+// Example usage:
+const myCar = new Car("Toyota", 2020, "Corolla");
+
 //5
 
 function processValue(value: string | number): number {
